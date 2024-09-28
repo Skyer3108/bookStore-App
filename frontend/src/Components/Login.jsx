@@ -21,7 +21,7 @@ const Login = () => {
             password:data.password
         }
        try{
-        const res=await axios.post('http://localhost:5000/user/login',userInfo)
+        const res=await axios.post('https://book-store-backend-paz7.onrender.com/user/login',userInfo)
         console.log(res)
 
         if(res.data.status===200){
