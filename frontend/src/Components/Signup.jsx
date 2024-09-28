@@ -25,7 +25,7 @@ const Signup = () => {
 
        
     try {
-        const res = await axios.post("http://localhost:5000/user/signup", userInfo);
+        const res = await axios.post("https://book-store-backend-paz7.onrender.com/user/signup", userInfo);
   
         if (res.data && res.data.status !== 400) {
           toast.success("Signup Successfully");
