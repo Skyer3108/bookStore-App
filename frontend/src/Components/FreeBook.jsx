@@ -26,7 +26,7 @@ const FreeBook = () => {
 
           try{
 
-             const res=await axios.get('http://localhost:5000/api/book')
+             const res=await axios.get('https://book-store-backend-paz7.onrender.com/api/book')
 
              setBook(res.data.data)
 
