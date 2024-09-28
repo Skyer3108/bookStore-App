@@ -3,9 +3,45 @@ import { Link } from "react-router-dom"
 
 import list from '../../public/list.json'
 
+import axios from 'axios'
+import { useEffect, useState } from "react"
+
 
 
 const Course = () => {
+
+    const [book,setBook]=useState([])
+
+
+    useEffect(()=>{
+
+        const fetchBooks=async()=>{
+
+            try{
+
+               const res=await axios.get('http://localhost:5000/api/book')
+
+               setBook(res.data.data)
+
+               console.log(res.data.data,'data')
+               console.log(book)
+
+
+
+            }catch(err){
+
+                console.log(err)
+
+            }
+
+        }
+
+        fetchBooks()
+
+
+    },[])
+
+
     return (
         <>
 
@@ -28,7 +64,7 @@ const Course = () => {
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-4 p-10">
                 {
-                    list.map((data) => (
+                    book.map((data) => (
 
                         <Cards key={data.id} data={data} />
                     ))

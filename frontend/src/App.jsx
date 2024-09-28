@@ -1,16 +1,23 @@
 import { useState } from 'react'
 import Home from './home/home'
 
+import toast,{Toaster} from 'react-hot-toast'
 
-import { Route, Routes } from 'react-router-dom'
+
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Courses from './courses/Courses'
 import Signup from './Components/Signup'
-import Footer from './Components/Footer'
+
+import { useAuth } from './Context/AuthProvider'
 
 
 
 function App() {
+
+  const [auth,setAuth]=useAuth()
+
+  console.log(auth)
 
 
   return (
@@ -19,12 +26,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
 
-        <Route path='/course' element={<Courses/>} />
+        <Route path='/course' element={auth?<Courses/>:<Navigate to='/signup' />} />
 
         <Route path='/signup' element={<Signup/>}/>
 
        
       </Routes>
+
+      <Toaster/>
 
     </div>
   )
