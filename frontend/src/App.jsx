@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Home from './home/home'
+
 
 import toast,{Toaster} from 'react-hot-toast'
 
@@ -10,6 +10,7 @@ import Courses from './courses/Courses'
 import Signup from './Components/Signup'
 
 import { useAuth } from './Context/AuthProvider'
+import Home from './home/HomePage'
 
 
 

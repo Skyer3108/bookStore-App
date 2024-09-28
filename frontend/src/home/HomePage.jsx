@@ -3,7 +3,7 @@ import Footer from "../Components/Footer"
 import FreeBook from "../Components/FreeBook"
 import Navbar from "../Components/Navbar"
 
-const Home = () => {
+const HomePage = () => {
     return (
         <div>
 
@@ -20,4 +20,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default HomePage
